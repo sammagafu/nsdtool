@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'patient',
     'question',
-    'questioncategory'
+    'questioncategory',
+
+    # DRF PLUGINGS
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
