@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(=q(fiw!v@=-b+f2e6^h3#x8@+!l@9-b1sgij0fhup#5xmrq1s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,23 +40,34 @@ INSTALLED_APPS = [
     
     'patient',
     'question',
-    'questioncategory',
+    'questioncategory',    
 
-    # djoser setting
-    'djoser',
+    # cors header
+    "corsheaders",
 
     # DRF PLUGINGS
     "rest_framework",
+    'rest_framework.authtoken',
+    'djoser',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "http://localhost:5173",
+    "http://127.0.0.1:9000",
 ]
 
 ROOT_URLCONF = 'ndstool.urls'
