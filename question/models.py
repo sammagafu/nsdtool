@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Questionnaire(models.Model):
@@ -15,6 +16,7 @@ class Questionnaire(models.Model):
 
 
 class QuestionAnswer(models.Model):
+    visitdate = models.DateField(verbose_name="visit date", auto_now=True)
     question = models.ForeignKey(Questionnaire,on_delete=models.CASCADE,related_name="questions")
     patient = models.ForeignKey("patient.Patient",on_delete=models.CASCADE,related_name="patientQuestion")
     answer = models.BooleanField(default=False)
@@ -25,3 +27,4 @@ class QuestionAnswer(models.Model):
 
     def __str__(self):
         return self.question.question
+    

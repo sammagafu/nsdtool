@@ -13,5 +13,5 @@ class QuestionnaireSerializer(serializers.ModelSerializer):
 class QuestionAnswerSerializer(serializers.ModelSerializer):
     class Meta:
         model = QuestionAnswer
-        fields = '__all__'
+        fields = ['question','answer','visitdate']
 

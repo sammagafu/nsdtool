@@ -5,7 +5,7 @@ from question.models import QuestionAnswer
 
 
 class PatientSerializer(serializers.ModelSerializer):
-    patientQuestion = QuestionAnswerSerializer(many=True,read_only=False)
+    patientQuestion = QuestionAnswerSerializer(many=True)
     class Meta:
         model = Patient
         fields = ['full_name', 'dateofbirth','region','facility','height','weight','patientQuestion']
