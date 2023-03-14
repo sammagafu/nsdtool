@@ -10,6 +10,9 @@ class PatientList(generics.ListCreateAPIView):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(doctor=self.request.user)
+
 
 class PatientDetailsview(generics.RetrieveUpdateAPIView):
     queryset = Patient.objects.all()

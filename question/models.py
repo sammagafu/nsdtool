@@ -4,6 +4,7 @@ from django.db import models
 class Questionnaire(models.Model):
     question = models.CharField(verbose_name="Question", max_length=50)
     questioncategory = models.ForeignKey("questioncategory.QuestionCategory",on_delete=models.CASCADE,related_name="questionCategory")
+    age = models.IntegerField(default=0,verbose_name="Age in Month's" )
     created_date = models.DateField(verbose_name="Created date", auto_now=False, auto_now_add=True)
     class Meta:
         verbose_name = 'Questionnaire'

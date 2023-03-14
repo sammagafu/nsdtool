@@ -14,3 +14,8 @@ class QuestionnairetList(generics.ListCreateAPIView):
 class QuestionnaireDetailsview(generics.RetrieveUpdateAPIView):
     queryset = Questionnaire.objects.all()
     serializer_class = QuestionnaireSerializer
+
+
+
+    #  def perform_create(self, serializer):
+    # serializer.save(user=self.request.user)
