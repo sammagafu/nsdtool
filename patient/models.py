@@ -41,8 +41,11 @@ class Patient(models.Model):
     facility = models.CharField(verbose_name="Facility name", max_length=180)
     region = models.CharField(verbose_name="Region", max_length=50,choices=REGION)
     doctor = models.ForeignKey(User, verbose_name="Doctor", on_delete=models.CASCADE)
-    height = models.IntegerField()
-    weight = models.IntegerField()
+    height = models.DecimalField(max_digits=5, decimal_places=2)
+    weight = models.DecimalField(max_digits=5, decimal_places=2)
+    address = models.TextField(verbose_name="Address",default="123 mikocheni Dsm")
+    phonenumber = models.CharField(verbose_name="Phone number", max_length=50,default="0712xxxxxx")
+    # address = models.TextField(verbose_name="Address")
 
     class Meta:
         verbose_name = 'Patient Infomartion'

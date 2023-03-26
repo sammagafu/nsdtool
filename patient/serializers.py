@@ -8,7 +8,7 @@ class PatientSerializer(serializers.ModelSerializer):
     patientQuestion = QuestionAnswerSerializer(many=True)
     class Meta:
         model = Patient
-        fields = ['full_name', 'dateofbirth','region','facility','height','weight','patientQuestion']
+        fields = ['full_name', 'dateofbirth','region','facility','height','weight','patientQuestion','phonenumber','address']
 
     def create(self, validated_data):
         question_data = validated_data.pop('patientQuestion')
