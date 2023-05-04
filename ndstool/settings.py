@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'djoser',
 
 ]
-
+    
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -134,6 +134,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 # Static files (CSS, JavaScript, Images)
