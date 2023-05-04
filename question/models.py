@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 class Questionnaire(models.Model):
     question = models.CharField(verbose_name="Question", max_length=255)
-    questioncategory = models.ForeignKey("questioncategory.QuestionCategory",on_delete=models.CASCADE,related_name="questionCategory")
+    questioncategory = models.ForeignKey("questioncategory.QuestionCategory",on_delete=models.CASCADE,related_name="questions")
     age = models.IntegerField(default=0,verbose_name="Age in Month's" )
     whattodo = models.CharField(verbose_name="What to do or watch", max_length=255,default="What to do or watch",blank=True,null=True)
     tools = models.CharField(verbose_name="Tools", max_length=255,blank=True,null=True)
