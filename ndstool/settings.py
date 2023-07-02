@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'djoser',
 
 ]
-
+    
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -68,6 +68,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",
     "http://localhost:5173",
     "http://127.0.0.1:9000",
+    "https://nsd.pediatrics.or.tz/",
+    # "https://nsd.pediatrics.or.tz/",
+    
 ]
 
 ROOT_URLCONF = 'ndstool.urls'
@@ -131,6 +134,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 # Static files (CSS, JavaScript, Images)

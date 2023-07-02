@@ -7,7 +7,7 @@ class QuestionnaireSerializer(serializers.ModelSerializer):
     class Meta:
         model = Questionnaire
         fields = '__all__'
-        depth = 1
+        # depth = 1
 
 
 class QuestionAnswerSerializer(serializers.ModelSerializer):
