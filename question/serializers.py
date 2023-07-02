@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from . models import QuestionAnswer,Questionnaire
+from . models import QuestionAnswer,Questionnaire,PatientComment
 from questioncategory.serializers import QuestionCategorySerializer
 
 class QuestionnaireSerializer(serializers.ModelSerializer):
@@ -15,3 +15,7 @@ class QuestionAnswerSerializer(serializers.ModelSerializer):
         model = QuestionAnswer
         fields = ['question','answer','visitdate']
 
+class CommenetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PatientComment
+        fields = '__all__'

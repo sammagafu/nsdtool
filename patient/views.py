@@ -13,10 +13,10 @@ class PatientList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(doctor=self.request.user)
 
-    def get_queryset(self, *args, **kwargs):
-        return super().get_queryset(*args, **kwargs).filter(
-            doctor=self.request.user
-        )
+    # def get_queryset(self, *args, **kwargs):
+    #     return super().get_queryset(*args, **kwargs).filter(
+    #         doctor=self.request.user
+    #     )
 
 
 class PatientDetailsview(generics.RetrieveUpdateAPIView):

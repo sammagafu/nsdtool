@@ -29,4 +29,8 @@ class QuestionAnswer(models.Model):
 
     def __str__(self):
         return self.question.question
-    
+
+class PatientComment(models.Model):
+    patient = models.ForeignKey("patient.Patient",on_delete=models.CASCADE,related_name="patientComment")
+    commentCategory = models.ForeignKey("questioncategory.QuestionCategory",on_delete=models.CASCADE,related_name="commentCategory")
+    comment = models.TextField()
