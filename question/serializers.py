@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from . models import QuestionAnswer,Questionnaire,PatientComment
-from questioncategory.serializers import QuestionCategorySerializer
 
 class QuestionnaireSerializer(serializers.ModelSerializer):
 

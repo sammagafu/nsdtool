@@ -36,7 +36,8 @@ class Patient(models.Model):
         ('Unguja South', 'Unguja South'),
     ]
 
-    full_name = models.CharField(verbose_name="Full name", max_length=180)
+    parentfull_name = models.CharField(verbose_name="Parent Full name", max_length=180,blank=True,null=True)
+    full_name = models.CharField(verbose_name="Child Initals", max_length=180)
     dateofbirth =models.DateField(auto_now=False, auto_now_add=False)
     facility = models.CharField(verbose_name="Facility name", max_length=180)
     region = models.CharField(verbose_name="Region", max_length=50,choices=REGION)
@@ -44,7 +45,8 @@ class Patient(models.Model):
     height = models.DecimalField(max_digits=5, decimal_places=2)
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     address = models.TextField(verbose_name="Address",default="123 mikocheni Dsm")
-    phonenumber = models.CharField(verbose_name="Phone number", max_length=50,default="0712xxxxxx")
+    phonenumber = models.CharField(verbose_name="Phone number", max_length=50,blank=True,null=True)
+    childAG = models.IntegerField(verbose_name="Age Grouo",default=0, null=False,blank=False)
     # address = models.TextField(verbose_name="Address")
 
     class Meta:
