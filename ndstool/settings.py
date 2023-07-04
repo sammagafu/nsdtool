@@ -71,6 +71,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://nsd.pediatrics.or.tz",
     "https://nsd.pediatrics.or.tz",
     "https://ecdtool.vercel.app",
+    "https://ecd.vercel.app",
     
 ]
 
