@@ -13,7 +13,7 @@ class PatientSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         question_data = validated_data.pop('patientQuestion')
-        comment = validated_data.pop('commets')
+        comment = validated_data.pop('patientComment')
         patient = Patient.objects.create(**validated_data)
         for question in question_data:
             QuestionAnswer.objects.create(patient=patient, **question)
