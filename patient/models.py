@@ -50,7 +50,7 @@ class Patient(models.Model):
     childAG = models.IntegerField(verbose_name="Age Group",default=0, null=False,blank=False)
     weeksborn = models.IntegerField(verbose_name="Number of weeks that he was born",null=True,blank=True)
     premature = models.CharField(verbose_name="premature", max_length=50,default="No")
-    overallcomment = models.TextField()
+    overallcomment = models.TextField(blank=True,null=True)
     # address = models.TextField(verbose_name="Address")
 
     class Meta:
