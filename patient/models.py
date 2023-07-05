@@ -46,7 +46,8 @@ class Patient(models.Model):
     weight = models.DecimalField(max_digits=5, decimal_places=2)
     address = models.TextField(verbose_name="Address",default="123 mikocheni Dsm")
     phonenumber = models.CharField(verbose_name="Phone number", max_length=50,blank=True,null=True)
-    childAG = models.IntegerField(verbose_name="Age Grouo",default=0, null=False,blank=False)
+    childAG = models.IntegerField(verbose_name="Age Group",default=0, null=False,blank=False)
+    weeksborn = models.IntegerField(verbose_name="Number of weeks that he was born",null=True,blank=True)
     # address = models.TextField(verbose_name="Address")
 
     class Meta:
