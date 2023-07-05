@@ -36,6 +36,7 @@ class Patient(models.Model):
         ('Unguja South', 'Unguja South'),
     ]
 
+
     parentfull_name = models.CharField(verbose_name="Parent Full name", max_length=180,blank=True,null=True)
     full_name = models.CharField(verbose_name="Child Initals", max_length=180)
     dateofbirth =models.DateField(auto_now=False, auto_now_add=False)
@@ -48,6 +49,7 @@ class Patient(models.Model):
     phonenumber = models.CharField(verbose_name="Phone number", max_length=50,blank=True,null=True)
     childAG = models.IntegerField(verbose_name="Age Group",default=0, null=False,blank=False)
     weeksborn = models.IntegerField(verbose_name="Number of weeks that he was born",null=True,blank=True)
+    premature = models.CharField(verbose_name="premature", max_length=50,default="No")
     # address = models.TextField(verbose_name="Address")
 
     class Meta:
