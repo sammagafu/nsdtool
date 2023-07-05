@@ -14,6 +14,7 @@ class PatientList(generics.ListCreateAPIView):
         serializer.save(doctor=self.request.user)
 
     # def get_queryset(self, *args, **kwargs):
+    # http://nsd.pediatrics.or.tz/
     #     return super().get_queryset(*args, **kwargs).filter(
     #         doctor=self.request.user
     #     )
