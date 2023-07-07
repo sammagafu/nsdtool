@@ -18,6 +18,6 @@ class PatientSerializer(serializers.ModelSerializer):
         for question in question_data:
             QuestionAnswer.objects.create(patient=patient, **question)
         for comm in comment_data:
-            comm['patient'] = patient 
+            comm['patient'] = patient.id  # Assign the patient ID instead of the patient instance
             PatientComment.objects.create(**comm)
         return patient
