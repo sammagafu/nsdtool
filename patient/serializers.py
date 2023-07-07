@@ -9,7 +9,7 @@ class PatientSerializer(serializers.ModelSerializer):
     patientComment = CommenetSerializer(many=True)
     class Meta:
         model = Patient
-        fields = ['parentfull_name','full_name', 'dateofbirth','region','facility','height','weight','childAG','weeksborn','premature','patientQuestion','phonenumber','address','patientComment','overallcomment']
+        fields = ['parentfull_name','full_name', 'dateofbirth','region','facility','height','weight','childAG','weeksborn','premature','phonenumber','address','patientQuestion','patientComment','overallcomment']
 
     def create(self, validated_data):
         question_data = validated_data.pop('patientQuestion')
