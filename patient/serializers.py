@@ -12,12 +12,15 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = ['parentfull_name','full_name', 'dateofbirth','region','facility','height','weight','childAG','weeksborn','premature','patientQuestion','phonenumber','address','patientComment','overallcomment']
 
     def create(self, validated_data):
-        question_data = validated_data.pop('patientQuestion', [])
-        comment_data = validated_data.pop('patientComment', [])
+        question_data = validated_data.pop('patientQuestion')
+        comment_data = validated_data.pop('patientComment')
         patient = Patient.objects.create(**validated_data)
+
         for question in question_data:
             QuestionAnswer.objects.create(patient=patient, **question)
+
         for comm in comment_data:
-            comm['patient'] = patient.id  # Assign the patient ID instead of the patient instance
+            comm['patient'] = patient
             PatientComment.objects.create(**comm)
+
         return patient
